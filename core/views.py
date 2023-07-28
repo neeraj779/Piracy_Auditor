@@ -4,25 +4,30 @@ from django.shortcuts import render
 from core.algorithm import main, fileSimilarity
 
 # Custom error pages
+
+
 def error_404(request, exception):
     return render(request, '404.html')
+
 
 def error_500(request):
     return render(request, '500.html')
 
+
 def landingPage(request):
     return render(request, 'landingPage.html')
+
 
 def file(request):
     return render(request, 'file.html')
 
+
 def text(request):
     return render(request, 'text.html')
 
+
 def compare(request):
     return render(request, 'compare.html')
-
-
 
 
 # this function is used to find palagrism in text and return the result to the user in the form of percentage and link
@@ -34,7 +39,7 @@ def result(request):
         percent = round(percent, 2)
     print("Output: ", percent, link)
     percent = round(percent, 2)
-    return render(request, 'text.html', {'link': link, 'percent': percent})
+    return render(request, 'resultPage.html', {'link': link, 'percent': percent})
 
 
 # this function is used to find palagrism in file and return the result to the user in the form of percentage and link
@@ -71,7 +76,7 @@ def fileTestResult(request):
     percent, link = main.findSimilarity(value)
     percent = round(percent, 2)
     print("Output: ", percent, link)
-    return render(request, 'file.html', {'link': link, 'percent': percent})
+    return render(request, 'resultPage.html', {'link': link, 'percent': percent})
 
 
 # this function is used to find the similarity between two texts
