@@ -3,6 +3,13 @@ from docx import *
 from django.shortcuts import render
 from core.algorithm import main, fileSimilarity
 
+# Custom error pages
+def error_404(request, exception):
+    return render(request, '404.html')
+
+def error_500(request):
+    return render(request, '500.html')
+
 def landingPage(request):
     return render(request, 'landingPage.html')
 
