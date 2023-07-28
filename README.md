@@ -1,6 +1,6 @@
 # Piracy Auditor
 
-The Piracy Auditor Django project aims to detect plagiarism in text and document files. Additionally, it provides functionality to compare two texts and two files for similarities. Follow the steps below to set up and run the project.
+The Piracy Auditor aims to detect plagiarism in text and document files. Additionally, it provides functionality to compare two texts and two files for similarities. Follow the steps below to set up and run the project.
 
 ## Setup
 
