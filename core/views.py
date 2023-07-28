@@ -29,6 +29,9 @@ def text(request):
 def compare(request):
     return render(request, 'compare.html')
 
+def docs(request):
+    return render(request, 'docs.html')
+
 
 # this function is used to find palagrism in text and return the result to the user in the form of percentage and link
 def result(request):
