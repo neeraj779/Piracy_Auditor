@@ -7,7 +7,7 @@
 **/.vscode 
 **/migrations
 .pylintrc
-
+static
 # Python # 
 *.py[cod] 
 *$py.class 
