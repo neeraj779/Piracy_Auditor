@@ -1,149 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piracy Auditor | Compare</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plagiarism Checker | Compare Document</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
-    <link href="{% static 'pc/stylesDocCheck.css' %}" rel="stylesheet" type="text/css">
-    <style>
-
-
-            body{
-                /* overflow: hidden;
-                overflow-x: hidden;
-                overflow-y: scroll; */
-                font-family: 'Roboto Mono', monospace;
-            }
-            
-            .navbar-brand {
-                font-family: 'Sansita Swashed', cursive; 
-                font-size: 26px; 
-                margin-right: 40px;
-            }
-            
-            .navbar-nav{
-                font-size: 20px;     
-            }
-            
-            .navbar-nav li :hover{
-                color: #2a9d8f;    
-                border-bottom: 2px solid #2a9d8f;
-            }
-            
-            .nav-two{
-                margin-left: 40px;
-            }
-            
-            .content-1{
-                margin-top: 10px;
-            }
-            
-            h1{
-                text-align: center;
-            }
-            
-            .text-content{
-                text-align: center;
-                margin: auto;
-                align-items: center;
-            }
-            
-            .tab-content-2{
-                height: 450px;
-                border: 2px solid rgb(131, 130, 130);
-                border-radius: 4px;
-                padding: 3px;
-                margin: auto;
-                background-color: white;
-            }
-            
-            form{
-                padding-top: 20px;
-            }
-            
-            textarea{
-                width: 90%;
-                height: 170px;
-            }
-            
-            #fileupload {
-                margin-bottom: 10px;
-            }
-            
-            #submit-button-1 {
-                margin-left: 100px;
-                background-color: #2a9d8f; 
-                color: white;
-            }
-            
-            #submit-button-2{
-                margin-left: 400px;
-                background-color: #2a9d8f; 
-                color: white;   
-            }
-            
-            #output {
-                margin-bottom: 200px;
-                height: 100px;
-            }
-            
-            #file-input-dc-2 {
-                color: black;
-            }
-            
-            .button-align{
-                text-align: center;
-                align-items: center;
-                margin-left: 100px;
-            }
-            
-            .output-per{
-                font-size: 35px;
-                color: #264653;
-                padding-top: 43px;
-                width: 155px;
-                height: 155px;
-                border: 7px solid #2a9d8f;
-                border-radius: 50%;
-                text-align: center;
-            }
-        
-    </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style='
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(42,42,114,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(42,42,114,1) 100%);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(42,42,114,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#2a2a72",GradientType=1);
-  '>
-      <a class="navbar-brand" href="{% url 'text' %}">Plagiarism Detector</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'home/css/compare.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="{% url 'text' %}">Piracy Auditor</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" style="margin-left: 0;">
+        <ul class="navbar-nav" style="margin-left: 0">
           <li class="nav-item nav-one">
-            <a class="nav-link" href="{% url 'file' %}">Documents<span
-                class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'file' %}"
+              >Documents<span class="sr-only">(current)</span></a
+            >
           </li>
           <li class="nav-item nav-two">
             <a class="nav-link" href="{% url 'text' %}">Text</a>
@@ -155,69 +69,131 @@
       </div>
     </nav>
 
-    <div class="container content-1">
-        <div class="text-content">
+    <div class="container content-1 mt-4">
+      <div class="text-content">
+        <p class="heading text-center text-gradient overlay_title waviy">
+          <span class="text-gradient" style="--i: 1">Choose</span>
+          <span class="text-gradient" style="--i: 2">two</span>
+          <span class="text-gradient" style="--i: 3">file</span>
+          <span class="text-gradient" style="--i: 4">to</span>
+          <span class="text-gradient" style="--i: 5">compare</span>
+          <span class="text-gradient" style="--i: 6">or</span>
+          <span class="text-gradient" style="--i: 7">enter</span>
+          <span class="text-gradient" style="--i: 8">content</span>
+          <span class="text-gradient" style="--i: 9">to</span>
+          <span class="text-gradient" style="--i: 10">compare</span>
+        </p>
 
-            <p>Choose two files to compare or enter contents to compare!</p>
-            <div class="row">
-                <div class="col-md-5 tab-content-2">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="text-tab-2" data-toggle="tab" href="#text-input-dc-1" role="tab"
-                                aria-controls="text-input-ws" aria-selected="true">Text</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="text-input-dc-1" role="tabpanel"
-                            aria-labelledby="text-tab-2">
-                            <form id="form1-ws" action="/text-similarity-analysis/" method="POST">
-                                {% csrf_token %}
-                                <textarea id="text-in-1" name="q1" required></textarea><br>
-                                <textarea id="text-1" name="q2" required></textarea>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 tab-content-2">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="file-tab-3" data-toggle="tab" href="#file-input-dc-2" role="tab"
-                                aria-controls="file-input-ws" aria-selected="true">File Upload</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="file-input-dc-2" role="tabpanel" aria-labelledby="file-tab-3">
-                            <form id="form2-ws" action="/file-similarity-analysis/" enctype="multipart/form-data" method="POST">
-                                {% csrf_token %}
-                                <input type="file" class="fileupload" id="fileupload" name="docfile1" required="True">
-                                <input type="file" class="fileupload" id="fileupload" name="docfile2" required="True">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row button-align">
-                <button type="submit" form="form1-ws" id="submit-button-1" class="btn">Compare The Texts</button>
-                <button type="submit" form="form2-ws" id="submit-button-2" class="btn submit-button-2">Compare The Files</button>
-            </div>
-            <ul style="text-align: center;margin-left: 450px;">
-                <li class="output-per" style="list-style:none">{{ result }}%</li>
+        <div class="row">
+          <div class="col-md-5 tab-content-2">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="text-tab-2"
+                  data-toggle="tab"
+                  href="#text-input-dc-1"
+                  role="tab"
+                  aria-controls="text-input-ws"
+                  aria-selected="true"
+                  >Text</a
+                >
+              </li>
             </ul>
-
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="text-input-dc-1"
+                role="tabpanel"
+                aria-labelledby="text-tab-2"
+              >
+                <form
+                  id="form1-ws"
+                  action="/text-similarity-analysis/"
+                  method="POST"
+                >
+                  {% csrf_token %}
+                  <textarea id="text-in-1" name="q1" required></textarea><br />
+                  <textarea id="text-1" name="q2" required></textarea>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 tab-content-2">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="file-tab-3"
+                  data-toggle="tab"
+                  href="#file-input-dc-2"
+                  role="tab"
+                  aria-controls="file-input-ws"
+                  aria-selected="true"
+                  >File Upload</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="file-input-dc-2"
+                role="tabpanel"
+                aria-labelledby="file-tab-3"
+              >
+                <form
+                  id="form2-ws"
+                  action="/file-similarity-analysis/"
+                  enctype="multipart/form-data"
+                  method="POST"
+                >
+                  {% csrf_token %}
+                  <input
+                    type="file"
+                    class="fileupload"
+                    id="fileupload"
+                    name="docfile1"
+                    required="True"
+                  />
+                  <input
+                    type="file"
+                    class="fileupload"
+                    id="fileupload"
+                    name="docfile2"
+                    required="True"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="row justify-content-center mt-4">
+          <button
+            type="submit"
+            form="form1-ws"
+            id="submit-button-1"
+            class="btn btn-primary mr-3"
+          >
+            Compare The Texts
+          </button>
+          <button
+            type="submit"
+            form="form2-ws"
+            id="submit-button-2"
+            class="btn btn-primary"
+          >
+            Compare The Files
+          </button>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <h4 class="output-per">{{ result }}%</h4>
+        </div>
+      </div>
     </div>
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  </body>
 </html>
