@@ -1,6 +1,6 @@
 from decouple import config
 from apiclient.discovery import build
-from core.algorithm import cosine
+from core.algorithm import cosineSimilarity
 
 searchEngine_API = config('SEARCHENGINE_API')
 searchEngine_Id = config('SEARCHENGINE_ID')
@@ -22,7 +22,7 @@ def searchWeb(text, output, c):
             for i in range(0, numList):
                 item = result['items'][i]
                 content = item['snippet']
-                simValue = cosine.cosineSim(text, content)
+                simValue = cosineSimilarity.cosine_similarity(text, content)
                 if simValue > maxSim:
                     maxSim = simValue
                     itemLink = item['link']
